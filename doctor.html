@@ -16,18 +16,38 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
 <link rel="stylesheet" href="main.css">
+
+<script>
+var lateness = 0;
+function hideLatenessDisplayAgain() {
+    $("#latenessDisplay").hide();
+}
+$(document).ready(function() {
+    $("#latenessDisplay").hide();
+    $("#moreTime").on("click",function() {
+        lateness += 5;
+        $("#latenessDisplay").text("You have added "+lateness+" minutes.");
+        $("#latenessDisplay").show();
+        setTimeout(hideLatenessDisplayAgain,10000);
+    });
+});
+</script>
 </head>
 <body>
 <div class='container'>
 <div class='row'>
 <div class='col-sm-12'>
-<h1>Your Real-Time Hospital Itinerary</h1>
+<h1>Need more time?</h1>
 </div>
 </div> <!-- row -->
 <div class='row'>
 
+<button id="moreTime" type=button class='btn btn-primary'>5 minutes</button>
 
+</div> <!-- row -->
+<div class='row'>
 
+<div id="latenessDisplay"></div>
 
 </div> <!-- row -->
 </div> <!-- container -->
