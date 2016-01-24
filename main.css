@@ -1,0 +1,16 @@
+.itineraryEvent {
+    min-height:50px;
+    margin-bottom:50px;
+}
+
+.action {
+    background-color:#fff;
+}
+
+.lateness {
+    color:red;
+}
+
+.wait {
+    background-color:#eee;
+}
